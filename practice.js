@@ -1,32 +1,34 @@
-function capitalize(){
-
+function capitalize(word) {
+  return word.slice(0, 1).toUpperCase() + word.slice(1);
 }
 
-function reverseString(){
-
+function reverseString(word) {
+  return word.split('').reverse().join('');
 }
 
 const calculator = {
-    add(){
+  add() {
 
-    },
-    subtract(){
+  },
+  subtract() {
 
-    },
-    divide(){
+  },
+  divide() {
 
-    },
-    multiply(){
+  },
+  multiply() {
 
-    }
-}
+  },
+};
 
-function caesarCipher(){
-
-}
-
-function analyzeArray(){
+function caesarCipher() {
 
 }
 
-export { capitalize, reverseString, calculator, caesarCipher, analyzeArray }
+function analyzeArray() {
+
+}
+
+export {
+  capitalize, reverseString, calculator, caesarCipher, analyzeArray,
+};
