@@ -7,26 +7,50 @@ function reverseString(word) {
 }
 
 const calculator = {
-  add() {
-
+  add(a,b) {
+    return a + b
   },
-  subtract() {
-
+  subtract(a,b) {
+    return a - b
   },
-  divide() {
-
+  divide(a, b) {
+    return a / b
   },
-  multiply() {
-
+  multiply(a, b) {
+    return a * b
   },
 };
 
-function caesarCipher() {
-
+function caesarCipher(string, factor) {
+    const cipherCode = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+    return string.split('').map(char=>{
+        if(char.match(/[a-z]/)){
+            
+            if(cipherCode.indexOf(char.toLowerCase()) + factor > cipherCode.length - 1){  
+                return cipherCode[cipherCode.indexOf(char.toLowerCase()) + factor - cipherCode.length]
+            }
+            
+            return cipherCode[cipherCode.indexOf(char.toLowerCase()) + factor]
+        } else if(char.match(/[A-Z]/)){
+            
+            if(cipherCode.indexOf(char.toLowerCase()) + factor > cipherCode.length - 1){  
+                return cipherCode[cipherCode.indexOf(char.toLowerCase()) + factor - cipherCode.length].toUpperCase()
+            }
+            
+            return cipherCode[cipherCode.indexOf(char.toLowerCase()) + factor].toUpperCase();
+        } else {
+            return char
+        }
+    }).join('')
 }
 
-function analyzeArray() {
-
+function analyzeArray(arr) {
+    return {
+        average: arr.reduce((sum,x)=>sum+x,0)/arr.length,
+        min: Math.min.apply(Math, arr),
+        max: Math.max.apply(Math,arr),
+        length: arr.length
+    }
 }
 
 export {
